@@ -7,7 +7,7 @@
   font-family: "Archivo Narrow", sans-serif;
 }
 
-body {
+.body {
   background-image: url(../img/wwwhirl.svg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -21,8 +21,8 @@ body {
   grid-template-rows: 4, 1fr;
   grid-template-areas:
     "navbar"
+    "primary"
     "main"
-    "secondary"
     "footer";
 }
 
@@ -30,12 +30,12 @@ body {
   grid-area: navbar;
 }
 
-.main {
-  grid-area: main;
+.texto1 {
+  grid-area: texto1;
 }
 
-.secondary {
-  grid-area: secondary;
+.main {
+  grid-area: main;
 }
 
 .footer {
@@ -76,6 +76,19 @@ body {
   justify-content: center;
   align-items: center;
   .cardGlass {
+    height: 400px;
+    width: 800px;
+  }
+  .cardGlass,
+  .cardGlass2 {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.6px);
+    -webkit-backdrop-filter: blur(3.6px);
+    border: 0.3px solid rgba(255, 255, 255, 0.33);
+  }
+  .cardGlass1 {
     display: grid;
     grid-template-columns: 4, 1fr;
     grid-template-rows: 3, 1fr;
@@ -85,14 +98,6 @@ body {
       "cardFinal cardFinal cardFinal cardFinal";
     justify-items: center;
     padding: 20px 60px 20px 60px;
-    height: 400px;
-    width: 800px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.6px);
-    -webkit-backdrop-filter: blur(3.6px);
-    border: 0.3px solid rgba(255, 255, 255, 0.33);
     img {
       height: 30px;
     }
@@ -111,12 +116,13 @@ body {
     .cardSol {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 0px 50px 0px 50px;
+      gap: 15px;
       height: 80px;
       width: 210px;
       font-size: 20px;
+      cursor: pointer;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -127,18 +133,8 @@ body {
         font-weight: lighter;
         color: white;
       }
-      .checkbox {
-        cursor: pointer;
-        background-color: #deb9f6;
-        border-radius: 4px;
-        border: 0.3px solid rgba(255, 255, 255, 0.33);
-        color: #deb9f6;
-        width: 18px;
-        height: 18px;
-        appearance: none;
-        &:checked {
-          background-color: #6f56aa;
-        }
+      &:hover {
+        border-color: #b092f6;
       }
     }
 
@@ -221,20 +217,13 @@ body {
   }
 }
 
-//SECONDARY
-.secondary {
-  height: 27vh;
-  h1 {
-    color: #b092f6;
-  }
-}
-
 //FOOTER
 .footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 3vh;
+
   .fa-brands {
     color: white;
     font-size: 20px;
@@ -248,11 +237,15 @@ body {
 
 //BTN
 .btn {
+  width: 120px;
+}
+.btn,
+.btn2 {
   font-size: 16px;
   padding-right: 15px;
   padding-left: 15.4px;
   height: 32.1px;
-  width: 120px;
+
   background-color: #b092f6;
   border-radius: 10px;
   color: white;
@@ -264,4 +257,92 @@ body {
     font-weight: bold;
     cursor: pointer;
   }
+}
+
+//PRIMARY
+
+.primary {
+  .texto1 {
+    display: flex;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    max-width: 335px;
+    padding: 40px 0 10px 60px;
+  }
+}
+
+.cardGlass2 {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  .cardInicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    h4 {
+      font-size: 22px;
+    }
+    h4,
+    label {
+      color: rgb(255, 255, 255);
+      letter-spacing: 1px;
+    }
+    .btn2 {
+      height: 40px;
+      width: 150px;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+
+      .form-input {
+        border: 0;
+        padding: 0.5rem;
+        margin-block: 0.5rem;
+        border-radius: 0.5rem;
+        width: 200px;
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+  }
+}
+
+// MODAL
+.modal-centro {
+  position: fixed;
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  visibility: visible;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 0.3s;
+  box-shadow: 0 0 0 500vmax rgba(0, 0, 0, 0.5);
+  .btn-cerrar {
+    width: 100%;
+  }
+}
+
+.modal-centro.active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+// DARKMODE
+
+body.dark-mode {
+  background-color: #1b1b1b;
+  color: white;
 }

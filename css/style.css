@@ -6,7 +6,7 @@
   font-family: "Archivo Narrow", sans-serif;
 }
 
-body {
+.body {
   background-image: url(../img/wwwhirl.svg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -18,19 +18,19 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 4, 1fr;
-  grid-template-areas: "navbar" "main" "secondary" "footer";
+  grid-template-areas: "navbar" "primary" "main" "footer";
 }
 
 .navbar {
   grid-area: navbar;
 }
 
-.main {
-  grid-area: main;
+.texto1 {
+  grid-area: texto1;
 }
 
-.secondary {
-  grid-area: secondary;
+.main {
+  grid-area: main;
 }
 
 .footer {
@@ -70,44 +70,50 @@ body {
   align-items: center;
 }
 .main .cardGlass {
+  height: 400px;
+  width: 800px;
+}
+.main .cardGlass,
+.main .cardGlass2 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.6px);
+  -webkit-backdrop-filter: blur(3.6px);
+  border: 0.3px solid rgba(255, 255, 255, 0.33);
+}
+.main .cardGlass1 {
   display: grid;
   grid-template-columns: 4, 1fr;
   grid-template-rows: 3, 1fr;
   grid-template-areas: "cardBtc cardEth cardEth cardSol" "cardMonto cardMonto cardPlazos cardPlazos" "cardFinal cardFinal cardFinal cardFinal";
   justify-items: center;
   padding: 20px 60px 20px 60px;
-  height: 400px;
-  width: 800px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3.6px);
-  -webkit-backdrop-filter: blur(3.6px);
-  border: 0.3px solid rgba(255, 255, 255, 0.33);
 }
-.main .cardGlass img {
+.main .cardGlass1 img {
   height: 30px;
 }
-.main .cardGlass .cardBtc {
+.main .cardGlass1 .cardBtc {
   grid-area: cardBtc;
 }
-.main .cardGlass .cardEth {
+.main .cardGlass1 .cardEth {
   grid-area: cardEth;
 }
-.main .cardGlass .cardSol {
+.main .cardGlass1 .cardSol {
   grid-area: cardSol;
 }
-.main .cardGlass .cardBtc,
-.main .cardGlass .cardEth,
-.main .cardGlass .cardSol {
+.main .cardGlass1 .cardBtc,
+.main .cardGlass1 .cardEth,
+.main .cardGlass1 .cardSol {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0px 50px 0px 50px;
+  gap: 15px;
   height: 80px;
   width: 210px;
   font-size: 20px;
+  cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -115,32 +121,18 @@ body {
   -webkit-backdrop-filter: blur(3.6px);
   border: 0.3px solid rgba(255, 255, 255, 0.33);
 }
-.main .cardGlass .cardBtc h4,
-.main .cardGlass .cardEth h4,
-.main .cardGlass .cardSol h4 {
+.main .cardGlass1 .cardBtc h4,
+.main .cardGlass1 .cardEth h4,
+.main .cardGlass1 .cardSol h4 {
   font-weight: lighter;
   color: white;
 }
-.main .cardGlass .cardBtc .checkbox,
-.main .cardGlass .cardEth .checkbox,
-.main .cardGlass .cardSol .checkbox {
-  cursor: pointer;
-  background-color: #deb9f6;
-  border-radius: 4px;
-  border: 0.3px solid rgba(255, 255, 255, 0.33);
-  color: #deb9f6;
-  width: 18px;
-  height: 18px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+.main .cardGlass1 .cardBtc:hover,
+.main .cardGlass1 .cardEth:hover,
+.main .cardGlass1 .cardSol:hover {
+  border-color: #b092f6;
 }
-.main .cardGlass .cardBtc .checkbox:checked,
-.main .cardGlass .cardEth .checkbox:checked,
-.main .cardGlass .cardSol .checkbox:checked {
-  background-color: #6f56aa;
-}
-.main .cardGlass .cardMonto {
+.main .cardGlass1 .cardMonto {
   grid-area: cardMonto;
   display: flex;
   flex-direction: column;
@@ -157,12 +149,12 @@ body {
   -webkit-backdrop-filter: blur(3.6px);
   border: 0.3px solid rgba(255, 255, 255, 0.33);
 }
-.main .cardGlass .cardMonto h4 {
+.main .cardGlass1 .cardMonto h4 {
   font-weight: lighter;
   padding-bottom: 20px;
   color: white;
 }
-.main .cardGlass .cardMonto .number {
+.main .cardGlass1 .cardMonto .number {
   background-color: #deb9f6;
   border-radius: 4px;
   border: 0.3px solid rgba(255, 255, 255, 0.33);
@@ -172,7 +164,7 @@ body {
      -moz-appearance: none;
           appearance: none;
 }
-.main .cardGlass .cardPlazos {
+.main .cardGlass1 .cardPlazos {
   grid-area: cardPlazos;
   display: flex;
   flex-direction: column;
@@ -189,18 +181,18 @@ body {
   -webkit-backdrop-filter: blur(3.6px);
   border: 0.3px solid rgba(255, 255, 255, 0.33);
 }
-.main .cardGlass .cardPlazos h4 {
+.main .cardGlass1 .cardPlazos h4 {
   font-weight: lighter;
   padding-bottom: 20px;
   color: white;
 }
-.main .cardGlass .cardPlazos .range {
+.main .cardGlass1 .cardPlazos .range {
   cursor: pointer;
 }
-.main .cardGlass .cardFinal {
+.main .cardGlass1 .cardFinal {
   grid-area: cardFinal;
 }
-.main .cardGlass .cardFinal .btnFinal {
+.main .cardGlass1 .cardFinal .btnFinal {
   font-size: 16px;
   padding-right: 15px;
   padding-left: 15.4px;
@@ -211,16 +203,9 @@ body {
   color: white;
   border-style: none;
 }
-.main .cardGlass .cardFinal .btnFinal:hover {
+.main .cardGlass1 .cardFinal .btnFinal:hover {
   cursor: pointer;
   font-weight: bold;
-}
-
-.secondary {
-  height: 27vh;
-}
-.secondary h1 {
-  color: #b092f6;
 }
 
 .footer {
@@ -240,20 +225,105 @@ body {
 }
 
 .btn {
+  width: 120px;
+}
+
+.btn,
+.btn2 {
   font-size: 16px;
   padding-right: 15px;
   padding-left: 15.4px;
   height: 32.1px;
-  width: 120px;
   background-color: #b092f6;
   border-radius: 10px;
   color: white;
   border-style: none;
 }
-.btn:hover {
+.btn:hover,
+.btn2:hover {
   background-color: #deb9f6;
   transform: scale(1.1);
   transition: 0.4s;
   font-weight: bold;
   cursor: pointer;
+}
+
+.primary .texto1 {
+  display: flex;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  max-width: 335px;
+  padding: 40px 0 10px 60px;
+}
+
+.cardGlass2 {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+.cardGlass2 .cardInicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.cardGlass2 .cardInicio h4 {
+  font-size: 22px;
+}
+.cardGlass2 .cardInicio h4,
+.cardGlass2 .cardInicio label {
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+}
+.cardGlass2 .cardInicio .btn2 {
+  height: 40px;
+  width: 150px;
+}
+.cardGlass2 .cardInicio .form {
+  display: flex;
+  flex-direction: column;
+}
+.cardGlass2 .cardInicio .form .form-input {
+  border: 0;
+  padding: 0.5rem;
+  margin-block: 0.5rem;
+  border-radius: 0.5rem;
+  width: 200px;
+}
+.cardGlass2 .cardInicio .form .form-input:focus {
+  outline: 0;
+}
+
+.modal-centro {
+  position: fixed;
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  visibility: visible;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 0.3s;
+  box-shadow: 0 0 0 500vmax rgba(0, 0, 0, 0.5);
+}
+.modal-centro .btn-cerrar {
+  width: 100%;
+}
+
+.modal-centro.active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+body.dark-mode {
+  background-color: #1b1b1b;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

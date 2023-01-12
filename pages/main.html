@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRIPTOR</title>
+    <!--font-awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body class="body">
+    <nav class="navbar">
+      <a href="/index.html"
+        ><img
+          class="logoPrincipal"
+          src="/img/logocriptor.png"
+          alt="Logo principal"
+      /></a>
+      <a href="#"
+        ><button id="color-mode" class="btn btnNav">Dark mode</button></a
+      >
+    </nav>
+    <div class="main">
+      <div class="cardGlass cardGlass1">
+        <button id="btc" class="cardBtc">
+          <img src="/img/btc.png" alt="btc" />
+          <h4>BTC</h4>
+        </button>
+        <button id="eth" class="cardEth">
+          <img src="/img/eth.png" alt="eth" />
+          <h4>ETH</h4>
+        </button>
+        <button id="sol" class="cardSol">
+          <img src="/img/sol.png" alt="sol" />
+          <h4>SOL</h4>
+        </button>
+        <div class="cardMonto">
+          <h4>Ingresa el monto a solicitar</h4>
+          <input class="number" type="text" />
+        </div>
+        <div class="cardPlazos">
+          <h4>Periodo del préstamo</h4>
+          <input
+            id="periodo"
+            class="range"
+            type="range"
+            min="2"
+            max="30"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>30</output>
+        </div>
+        <div class="cardFinal">
+          <button id="obtener-prestamo" class="btnFinal">
+            Obtener Prestamo
+          </button>
+        </div>
+      </div>
+      <div class="modal-centro" id="modal-centro">
+        <h2>
+          Felicidades, su prestamo sera depositado en su billetera virtual a la
+          brevedad.
+        </h2>
+        <button class="btn btn-cerrar" id="cerrar-modal-centro">
+          Finalizar
+        </button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <a href="https://www.apple.com/la/app-store/" target="_blank"
+        ><i class="fa-brands fa-apple"></i
+      ></a>
+      <a
+        href="https://play.google.com/store/apps?hl=es_UY&gl=US&pli=1"
+        target="_blank"
+        ><i class="fa-brands fa-android"></i
+      ></a>
+      <a href="https://github.com/Cronosuy" target="_blank"
+        ><i class="fa-brands fa-github"></i
+      ></a>
+    </footer>
+  </body>
+</html>
