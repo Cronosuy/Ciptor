@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRIPTOR</title>
+    <!--toastify-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <!--font-awesome-->
     <link
       rel="stylesheet"
@@ -14,7 +20,6 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <script defer src="/js/main.js"></script>
   </head>
   <body class="body">
     <nav class="navbar">
@@ -30,63 +35,77 @@
     </nav>
     <div class="main">
       <div class="cardGlass cardGlass1">
-        <button id="btc" class="cardBtc">
+        <button type="submit" id="btc" class="cardBtc toggle">
           <img src="/img/btc.png" alt="btc" />
           <h4>BTC</h4>
         </button>
-        <button id="eth" class="cardEth">
+        <button type="submit" id="eth" class="cardEth toggle">
           <img src="/img/eth.png" alt="eth" />
           <h4>ETH</h4>
         </button>
-        <button id="sol" class="cardSol">
+        <button type="button" id="sol" class="cardSol">
           <img src="/img/sol.png" alt="sol" />
           <h4>SOL</h4>
         </button>
         <div class="cardMonto">
-          <h4>Ingresa el monto a solicitar</h4>
-          <input class="number" type="text" />
+          <form id="datos-prestamo" action="submit" class="datosPrestamo">
+            <label for="number"
+              >Ingresa el monto a solicitar
+              <input
+                id="numero"
+                class="number"
+                type="number"
+                min="1"
+                max="50"
+              />
+            </label>
+            <label for="periodo"
+              >Periodo del prestamo
+              <input
+                id="periodo"
+                class="range"
+                type="range"
+                min="2"
+                max="30"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output>30</output></label
+            >
+          </form>
         </div>
-        <div class="cardPlazos">
-          <h4>Periodo del préstamo</h4>
-          <input
-            id="periodo"
-            class="range"
-            type="range"
-            min="2"
-            max="30"
-            oninput="this.nextElementSibling.value = this.value"
-          />
-          <output>30</output>
-        </div>
+
         <div class="cardFinal">
-          <button id="obtener-prestamo" class="btnFinal">
+          <button type="button" id="obtener-prestamo" class="btnFinal">
             Obtener Prestamo
           </button>
         </div>
       </div>
-      <div class="modal-centro" id="modal-centro">
-        <h2>
-          Felicidades, su prestamo sera depositado en su billetera virtual a la
-          brevedad.
-        </h2>
-        <button class="btn btn-cerrar" id="cerrar-modal-centro">
-          Finalizar
-        </button>
-      </div>
     </div>
 
     <footer class="footer">
-      <a href="https://www.apple.com/la/app-store/" target="_blank"
-        ><i class="fa-brands fa-apple"></i
-      ></a>
-      <a
-        href="https://play.google.com/store/apps?hl=es_UY&gl=US&pli=1"
-        target="_blank"
-        ><i class="fa-brands fa-android"></i
-      ></a>
-      <a href="https://github.com/Cronosuy" target="_blank"
-        ><i class="fa-brands fa-github"></i
-      ></a>
+      <div class="criptosDisponibles">
+        <img class="imgGrafico" src="/img/imgGrafico.png" alt="grafico" />
+        <ul id="criptos-disponibles" class="ulCripto"></ul>
+      </div>
+      <div class="redesSociales">
+        <a href="https://www.apple.com/la/app-store/" target="_blank"
+          ><i class="fa-brands fa-apple"></i
+        ></a>
+        <a
+          href="https://play.google.com/store/apps?hl=es_UY&gl=US&pli=1"
+          target="_blank"
+          ><i class="fa-brands fa-android"></i
+        ></a>
+        <a href="https://github.com/Cronosuy" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
     </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>

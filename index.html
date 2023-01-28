@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRIPTOR</title>
+    <!--toastify-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <!--font-awesome-->
     <link
       rel="stylesheet"
@@ -14,7 +20,6 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script defer src="js/main.js"></script>
   </head>
   <body class="body">
     <nav class="navbar">
@@ -28,60 +33,78 @@
         <a href="#"
           ><button id="color-mode" class="btn btnNav">Dark mode</button></a
         >
-        <a href="#"><button class="btn btnNav">Empezar</button></a>
       </div>
     </nav>
     <div class="primary"><h1 class="texto1">Tu prestamo cripto hoy</h1></div>
     <div class="main">
       <div class="cardGlass2">
         <div class="cardInicio">
-          <h4>Iniciar sesión</h4>
-          <form action="" id="name-form" class="form">
-            <label for="name">Usuario o e-mail:</label>
-            <input
-              type="text"
-              placeholder="Ingrese su usuario o e-mail"
-              id="name-input"
-              class="form-input"
-              required
-            />
+          <h4>Registrarse</h4>
+          <form id="name-form" class="form">
+            <label for="name"
+              >Usuario:
+              <input
+                type="text"
+                name="name"
+                placeholder="Ingrese su nombre"
+                id="name-input"
+                class="form-input"
+                required
+              />
+            </label>
+            <label for="name"
+              >E-mail:
+              <input
+                type="text"
+                name="email"
+                placeholder="Ingrese su e-mail"
+                id="email-input"
+                class="form-input"
+                required
+              />
+            </label>
+
+            <label for="password"
+              >Contraseña:
+              <input
+                type="password"
+                name="password"
+                placeholder="Ingrese su contraseña"
+                id="age-input"
+                class="form-input"
+                required
+                minlength="6"
+                maxlength="12"
+              />
+            </label>
+
+            <button type="submit" id="comenzar" class="btn2">Comenzar</button>
           </form>
-          <form action="" id="password-form" class="form">
-            <label for="name">Contraseña:</label>
-            <input
-              type="password"
-              placeholder="Ingrese su contraseña"
-              id="age-input"
-              class="form-input"
-              required
-              minlength="6"
-              maxlength="12"
-            />
-          </form>
-          <div class="botones">
-            <a href="pages/main.html"
-              ><button type="submit" id="comenzar" class="btn2">
-                Comenzar
-              </button></a
-            >
-            <button class="btn2">Registrarse</button>
-          </div>
         </div>
       </div>
     </div>
 
     <footer class="footer">
-      <a href="https://www.apple.com/la/app-store/" target="_blank"
-        ><i class="fa-brands fa-apple"></i
-      ></a>
-      <a
-        href="https://play.google.com/store/apps?hl=es_UY&gl=US&pli=1"
-        target="_blank"
-        ><i class="fa-brands fa-android"></i
-      ></a>
-      <a href="https://github.com/Cronosuy" target="_blank"
-        ><i class="fa-brands fa-github"></i
-      ></a>
+      <div class="creador">Made by CRONOSUY</div>
+      <div class="redesSociales">
+        <a href="https://www.apple.com/la/app-store/" target="_blank"
+          ><i class="fa-brands fa-apple"></i
+        ></a>
+        <a
+          href="https://play.google.com/store/apps?hl=es_UY&gl=US&pli=1"
+          target="_blank"
+          ><i class="fa-brands fa-android"></i
+        ></a>
+        <a href="https://github.com/Cronosuy" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
     </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
